@@ -2,7 +2,7 @@ version: "1.4.0"
 variant: fcos
 passwd:
   users:
-    - name: admin
+    - name: core
       password_hash: <set password>
       groups:
         - sudo
@@ -13,7 +13,7 @@ storage:
     - path: /usr/local/sbin/actions-runner
       mode: 0755
       user:
-        name: admin
+        name: core
       group:
         name: core
   files:
@@ -23,7 +23,7 @@ storage:
         source: https://github.com/actions/runner/releases/download/v2.287.1/actions-runner-linux-x64-2.287.1.tar.gz
       mode: 0755
       user:
-        name: admin
+        name: core
       group:
         name: core
     - path: /usr/local/sbin/actions-runner/manage-runner.sh
@@ -31,7 +31,7 @@ storage:
         local: manage-runner.sh
       mode: 0755
       user:
-        name: admin
+        name: core
       group:
         name: core
     - path: /etc/actions-runner
@@ -39,7 +39,7 @@ storage:
         local: actions-runner
       mode: 0700
       user:
-        name: admin
+        name: core
       group:
         name: core
 systemd:
